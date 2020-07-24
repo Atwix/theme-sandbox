@@ -29,6 +29,7 @@
                 </arguments>
             </block>
         </referenceContainer>
+
         <move element="copyright" destination="before.body.end"/>
     </body>
 </page>
