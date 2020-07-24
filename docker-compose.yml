@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  web:
+    image: atwixdotcom/frontend_env:latest
+    container_name: ATWIX_MAGENTO_FRONT_ENV
+    command: bash -c "/bin/bash /root/runservices.sh; bin/bash"
+    ports:
+      - "30800:80"
+      - "30022:22"
+    volumes:
+      - ./runservices.sh:/root/runservices.sh
+      - ./src/app/code/Atwix:/var/www/magento/app/code/Atwix:delegated
+      - ./src/app/design:/var/www/magento/app/design:delegated
+    tty: true
+    stdin_open: true
